@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Book = require('../models/book')
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => {          //Import to server.js : const indexRouter = require('./routes/index')
   let books
   try {
     books = await Book.find().sort({ createdAt: 'desc' }).limit(10).exec()
@@ -13,3 +13,5 @@ router.get('/', async (req, res) => {
 })
 
 module.exports = router
+
+

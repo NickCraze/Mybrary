@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Author = require('../models/author')
+const Author = require('../models/author') //import author schema from author model
 const Book = require('../models/book')
 
 // All Authors Route
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 
 // New Author Route
 router.get('/new', (req, res) => {
-  res.render('authors/new', { author: new Author() })
+  res.render('authors/new', { author: new Author() }) //import Author from author model and use in ejs file
 })
 
 // Create Author Route
